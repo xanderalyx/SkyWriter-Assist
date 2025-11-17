@@ -1,4 +1,4 @@
-# 📂 Project Documentation and Reports
+# 📂 Project Documentation and Proposal Report
 
 This directory serves as the dedicated archive for all formal documentation related to the SkyWriter-Assist project.
 
