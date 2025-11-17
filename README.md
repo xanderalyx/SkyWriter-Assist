@@ -43,9 +43,9 @@ The $\text{Raspberry Pi}$ utilises this $\text{JSON}$ data for core model develo
 
 ### **C. Project Documentation**
 
-The full, detailed final report and supplementary materials are included in the dedicated documentation directory.
+The full, detailed design and proposal report and supplementary materials are included in the dedicated documentation directory.
 
-* **Final Report:** Contains the full literature review, methodology, detailed model evaluation, and results discussion. **[Located in `docs/SkyWriter-Assist_Final_Report.pdf`]**
+* **Project Proposal:** Contains the full literature review, proposed methodology, system design rationale, model evaluation plan, and results discussion. **[Located in `docs/SkyWriter-Assist_Final_Report.pdf`]**
 
 ---
 
