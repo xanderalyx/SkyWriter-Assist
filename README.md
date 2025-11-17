@@ -89,4 +89,4 @@ The project code and artifacts are organised into clear directories for easy nav
 | **`arduino_firmware/`** | Arduino sketch (`.ino`) | Contains the source code for the sensor node, managing IMU collection and BLE transmission. |
 | **`data/`** | JSON data file (`.json`) | Stores the merged, labeled dataset used for offline training. |
 | **`models/`** | Trained models (`.pkl`) and metrics (`.png`) | Stores all serialised classifiers, the `scaler.pkl` object, and evaluation results (confusion matrices, comparison chart). |
-| **`docs/`** | **Final Report (.pdf or .docx)** | **The full project report, methodology, and evaluation narrative.** |
+| **`docs/`** | **Proposal Report (.pdf)** | **The full project proposal, methodology, and evaluation narrative.** |
