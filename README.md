@@ -41,6 +41,12 @@ The $\text{Raspberry Pi}$ utilises this $\text{JSON}$ data for core model develo
     * **Macro F1-Score:** Crucial for multi-class problems, ensuring performance across **all 11 characters**.
     * **Confusion Matrix:** Used to visually identify **confusable pairs** (e.g., P mistaken for R) to select the model that best handles challenging classifications.
 
+### **C. Project Documentation**
+
+The full, detailed final report and supplementary materials are included in the dedicated documentation directory.
+
+* **Final Report:** Contains the full literature review, methodology, detailed model evaluation, and results discussion. **[Located in `docs/SkyWriter-Assist_Final_Report.pdf`]**
+
 ---
 
 ## 📡 Detailed Gesture Data Capture Pipeline
@@ -50,7 +56,7 @@ The $\text{Raspberry Pi}$ utilises this $\text{JSON}$ data for core model develo
 The data acquisition is managed by the Arduino firmware, which implements the BLE Peripheral role.
 
 * **Capture Parameters:** Data is recorded for **2.5 seconds** at **50 Hz**, resulting in 125 samples per gesture.
-* **Data Packing:** Accelerometer values (G) are converted to milligravity (mg) (int16_t) and packaged into **42 small BLE chunks** to ensure data integrity during transmission.
+* **Data Packing:** Accelerometer values (G) are converted to **milligravity (mg)** (int16) and packaged into **42 small BLE chunks** to ensure data integrity during transmission.
 
 ### **2. BLE Communication and Reassembly (`src/ble_capture_module.py`)**
 
@@ -61,9 +67,10 @@ The Python client on the Raspberry Pi (BLE Central) executes the core logic for 
 * **Unpacking:** The Pi's notification handler receives the 42 data chunks, unpacks the 16-bit integers using `struct.unpack('<hhh', ...)`, converts the mg values back into Gs (float), and reassembles them into a complete (125, 3) NumPy array.
 
 ---
+
 ### 💻 Core Source Code (`src/`)
 
-The Python scripts in the `src/` directory manage the execution of the Edge pipeline:
+The Python scripts in the `src/` directory manage the execution of the Edge-AI pipeline:
 
 * **`realtime_predictor.py`**: The main application that loads the final model and scaler from `models/` and orchestrates the live capture and classification loop.
 * **`ble_capture_module.py`**: Handles all asynchronous BLE client communication, chunk reassembly, and data type conversion.
@@ -74,7 +81,7 @@ The Python scripts in the `src/` directory manage the execution of the Edge pipe
 
 ## 📁 Repository Structure
 
-The project code and artifacts are organised into clear directories for easy navigation:
+The project code and artifacts are organised into clear directories for easy navigation :
 
 | Directory | Content | Role |
 | :--- | :--- | :--- |
@@ -82,7 +89,4 @@ The project code and artifacts are organised into clear directories for easy nav
 | **`arduino_firmware/`** | Arduino sketch (`.ino`) | Contains the source code for the sensor node, managing IMU collection and BLE transmission. |
 | **`data/`** | JSON data file (`.json`) | Stores the merged, labeled dataset used for offline training. |
 | **`models/`** | Trained models (`.pkl`) and metrics (`.png`) | Stores all serialised classifiers, the `scaler.pkl` object, and evaluation results (confusion matrices, comparison chart). |
-
----
-
-****
+| **`docs/`** | **Final Report (.pdf or .docx)** | **The full project report, methodology, and evaluation narrative.** |
