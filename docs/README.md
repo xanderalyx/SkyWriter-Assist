@@ -6,7 +6,7 @@ The primary document is the design and proposal report for the academic submissi
 
 ### 📝 The Final Project Report
 
-* **Document:** **[SkyWriter-Assist\_Project\ Proposal \_Report.pdf](SkyWriter-Assist-Proposal-Report.pdf)**
+* **Document:** **[SkyWriter-Assist\_Project\ Proposal\_Report.pdf](SkyWriter-Assist-Proposal-Report.pdf)**
 * **Purpose:** This report provides the full narrative, detailed methodology, and formal evaluation of the system, covering:
     * **System Design Rationale:** Justification for the chosen Edge-AI architecture (Arduino + Raspberry Pi).
     * **Data Pipeline:** The strategy for data collection, feature engineering, and storage in MongoDB.
