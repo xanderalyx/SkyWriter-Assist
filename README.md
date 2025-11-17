@@ -61,6 +61,16 @@ The Python client on the Raspberry Pi (BLE Central) executes the core logic for 
 * **Unpacking:** The Pi's notification handler receives the 42 data chunks, unpacks the 16-bit integers using `struct.unpack('<hhh', ...)`, converts the mg values back into Gs (float), and reassembles them into a complete (125, 3) NumPy array.
 
 ---
+### 💻 Core Source Code (`src/`)
+
+The Python scripts in the `src/` directory manage the execution of the Edge pipeline:
+
+* **`realtime_predictor.py`**: The main application that loads the final model and scaler from `models/` and orchestrates the live capture and classification loop.
+* **`ble_capture_module.py`**: Handles all asynchronous BLE client communication, chunk reassembly, and data type conversion.
+* **`features.py`**: Contains the logic to perform **Gravity Compensation** and calculate the **42 Time-Domain Features** (e.g., standard deviation, jerk) from the raw sensor data.
+* **`train_from_merged.py`**: Executes the entire offline training pipeline, from loading data in `data/` to generating artifacts in `models/`.
+
+---
 
 ## 📁 Repository Structure
 
